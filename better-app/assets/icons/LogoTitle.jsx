@@ -11,7 +11,7 @@ function LogoTitle() {
       }}
     >
       <Image
-        style={{ width: 50, height: 50 }}
+        style={{ width: 75, height: 75 }}
         source={require("./5eb3c1b0c8c459000443512e.png")}
         resizeMode="cover"
       />
