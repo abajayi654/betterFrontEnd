@@ -1,4 +1,13 @@
-import { StyleSheet, Text, View, Image, FlatList, Modal } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  FlatList,
+  Modal,
+  Button,
+  SafeAreaView,
+} from "react-native";
 import { useState } from "react";
 import { useRouter, Stack } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -66,12 +75,9 @@ export default function Page() {
         )}
       />
       <Modal visible={modalVisble}>
-        <View style={styles.main}>
-          <Text style={styles.title}>hello</Text>
-          <Text style={styles.subtitle}>
-            This is the first page of your app.
-          </Text>
-        </View>
+        <SafeAreaView>
+          <Button title="Close" onPress={() => setModalVisible(!modalVisble)} />
+        </SafeAreaView>
       </Modal>
     </View>
   );
