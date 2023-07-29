@@ -14,6 +14,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import LogoTitle from "../assets/icons/LogoTitle.jsx";
 import { AppCard } from "../components/AppCard.js";
+import SportIcon from "../components/SportIcon.js";
 
 export default function Page() {
   const [modalVisble, setModalVisible] = useState(false);
@@ -43,8 +44,52 @@ export default function Page() {
       location: "5.5 miles",
     },
   ];
+  const categories = [
+    {
+      name: "Football",
+      label: "Football",
+      backgroundColor: "#a83254",
+      icon: "football",
+    },
+
+    {
+      name: "Basketball",
+      label: "Basketball",
+      backgroundColor: "#3293a8",
+      icon: "basketball",
+    },
+    {
+      name: "Swimming",
+      label: "Swimming",
+      backgroundColor: "#a88d32",
+      icon: "swim",
+    },
+    {
+      name: "Badminton",
+      label: "Badminton",
+      backgroundColor: "#5c32a8",
+      icon: "badminton",
+    },
+    {
+      name: "Volley ball",
+      label: "Volley Ball",
+      backgroundColor: "#a83277",
+      icon: "volleyball",
+    },
+
+    {
+      name: "Tennis",
+      label: "Tennis",
+      backgroundColor: "#32a84c",
+      icon: "tennis",
+    },
+  ];
   const router = useRouter();
   const handlePress = () => setModalVisible(true);
+  const onPress = (page) => {
+    router.push(`/screens/${page}`);
+    // setModalVisible(false);
+  };
   return (
     <View style={styles.container}>
       <Stack.Screen
@@ -77,6 +122,14 @@ export default function Page() {
       <Modal visible={modalVisble}>
         <SafeAreaView>
           <Button title="Close" onPress={() => setModalVisible(!modalVisble)} />
+          <FlatList
+            data={categories}
+            keyExtractor={(category) => category.name}
+            renderItem={({ item }) => (
+              <SportIcon item={item} onPress={onPress(item.name)} />
+            )}
+            numColumns={3}
+          />
         </SafeAreaView>
       </Modal>
     </View>
