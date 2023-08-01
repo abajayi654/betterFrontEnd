@@ -1,5 +1,7 @@
 import { Stack } from "expo-router";
 
+import { useEffect } from "react";
+
 export const Layout = () => {
   return (
     <Stack
@@ -12,7 +14,7 @@ export const Layout = () => {
           fontWeight: "bold",
         },
       }}
-    />
+    ></Stack>
   );
 };
 

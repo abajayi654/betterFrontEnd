@@ -28,7 +28,7 @@ export const AppCard = ({ handlePress, mainText, description, location }) => {
                 </Text>
                 <Text
                   style={{
-                    marginLeft: 300,
+                    marginLeft: 325,
                     color: "#4C4C4C",
                     height: 30,
                     width: 60,
